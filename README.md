@@ -12,5 +12,5 @@ npm install
 npm run build
 ```
 
-Open inside your browser ...
+Load ./dist/index.html in your browser ...
 
