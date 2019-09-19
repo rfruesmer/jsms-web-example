@@ -1,6 +1,6 @@
 import {JsmsService} from "jsms";
 
-function dumpObject(object) {
+function print(object) {
     console.log(object);
 
     const element = document.createElement('div');
@@ -13,17 +13,17 @@ const messageService = new JsmsService();
 
 messageService.receive("/some/queue")
     .then((message) => {
-        dumpObject(message.body); // expected output: {request: "foo"}
+        print(message.body); // expected output: {request: "foo"}
         return {response: "ACK"};
     });
 
 messageService.send("/some/queue", {request: "foo"})
     .then((response) => {
-        dumpObject(response.body); // expected output: {response: "ACK"}
+        print(response.body); // expected output: {response: "ACK"}
     });
 
 messageService.subscribe("/some/topic", message => {
-    dumpObject(message.body); // expected output: {zyx: "cab"}
+    print(message.body); // expected output: {zyx: "cab"}
 });
 
 messageService.publish("/some/topic", {zyx: "cab"});
