@@ -8,7 +8,7 @@
   "author": "Reinhold Früsmer",
   "license": "MIT",
   "devDependencies": {
-    "jsms": "^1.0.0-alpha.14",
+    "jsms": "^1.0.0-alpha.32",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.8"
   }

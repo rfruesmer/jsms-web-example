@@ -13,15 +13,17 @@ const messageService = new JsmsService();
 
 messageService.receive("/some/queue")
     .then((message) => {
-        dumpObject(message.body);
-        // expected output: {request: "foo"}
-
+        dumpObject(message.body); // expected output: {request: "foo"}
         return {response: "ACK"};
     });
 
 messageService.send("/some/queue", {request: "foo"})
     .then((response) => {
-        dumpObject(response.body);
-        // expected output: {response: "ACK"}
+        dumpObject(response.body); // expected output: {response: "ACK"}
     });
 
+messageService.subscribe("/some/topic", message => {
+    dumpObject(message.body); // expected output: {zyx: "cab"}
+});
+
+messageService.publish("/some/topic", {zyx: "cab"});
