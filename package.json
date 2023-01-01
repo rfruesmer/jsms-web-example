@@ -11,7 +11,7 @@
     "jsms": "^1.0.0-alpha.32"
   },
   "devDependencies": {
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.8"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
